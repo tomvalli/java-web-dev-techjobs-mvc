@@ -37,7 +37,11 @@
     <hr />
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
-
+    <th:block th:if="${numberOfJobs}">
+        <h3 th:text="${numberOfJobs} + ' results'"></h3>
+        <div th:replace="list-jobs :: job-list"></div>
+    </th:block>
+    <th:block th:if="${numberOfJobs == 0}" th:text="'No results for \'' + ${term} + '\''"></th:block>
 </div>
 
 </body>
